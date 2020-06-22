@@ -42,6 +42,8 @@ The following 4 REST routes are setup by default:
 # Future Enhancements / TODO:
 -(Library) make more helper methods to cut down on repeat code between GenerateTitle and GenerateStrikeForce functions
 
+-(Library) template method to allow custom title formats
+
 -(API) figure out how to allow .XML output as well but keep JSON as the default
 
 -(API) creating some REST API metadata for the project
