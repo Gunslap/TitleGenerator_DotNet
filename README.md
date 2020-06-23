@@ -35,7 +35,7 @@ returns a single random word read in from the text files of the specified type (
 -update/modify the word list files as you see fit. They will be read in each time an instance of the TitleGenerator class is created
 
 # How to use the Web API:
-The following 4 REST routes are setup by default:
+The following 6 REST routes are setup by default:
 
 ## "/TitleGenerator"
 returns a strike force
