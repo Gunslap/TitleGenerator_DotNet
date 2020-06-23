@@ -14,7 +14,7 @@ namespace MissilePuppy.TitleGeneratorAPI.Controllers
     //will have to figure that out later
     public class TitleGeneratorController : ControllerBase
     {
-        private static TG.TitleGenerator generator = new TG.TitleGenerator(); 
+        private static TG.TitleGenerator generator = new TG.TitleGenerator();
         private readonly ILogger<TitleGeneratorController> _logger;
 
         public TitleGeneratorController(ILogger<TitleGeneratorController> logger)
@@ -52,6 +52,24 @@ namespace MissilePuppy.TitleGeneratorAPI.Controllers
             for (int i = 0; i < id; i++)
             {
                 ls.Add(generator.GenerateTitle());
+            }
+            return Ok(ls.ToArray());
+        }
+
+        //Get a title by input template
+        [HttpGet("ByTemplate/{template}")] // "/TitleGenerator/bytemplate"
+        public ActionResult GetByTemplate(string template)
+        {
+            return Ok(generator.GenerateTitleFromTemplate(template));
+        }
+        //Get multiple titles by input template
+        [HttpGet("ByTemplate/{template}/{id}")] // "/TitleGenerator/bytemplate"
+        public ActionResult GetByTemplate(string template, int? id)
+        {
+            List<string> ls = new List<string>();
+            for (int i = 0; i < id; i++)
+            {
+                ls.Add(generator.GenerateTitleFromTemplate(template));
             }
             return Ok(ls.ToArray());
         }

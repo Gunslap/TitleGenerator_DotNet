@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 
 namespace MissilePuppy.TitleGenerator
 {
@@ -134,7 +135,6 @@ namespace MissilePuppy.TitleGenerator
                     noun1 = GenerateNoun();
                     title = title + noun1;
                     break;
-
                 //single noun... again
                 case 1:
                     noun1 = GenerateNoun();
@@ -463,6 +463,47 @@ namespace MissilePuppy.TitleGenerator
             }
             //return the completed Title
             return title;
+        }
+
+        /// <summary>
+        /// Returns a randomly generated media title name based on the provided template
+        /// example : "Noun Verb Adjective"
+        /// </summary>
+        /// <param name="template"></param>
+        /// <returns></returns>
+        public string GenerateTitleFromTemplate(string template)
+        {
+            //find and replace nouns
+            while(template.Contains("Noun") == true)
+            {
+                int firstC = template.IndexOf("Noun");
+                int lastC = template.IndexOf("Noun") + "Noun".Length;
+                int endC = template.Length - (template.IndexOf("Noun") + "Noun".Length);
+                string before = template.Substring(0, firstC);
+                string after = template.Substring(lastC, endC);
+                template = before + GetNoun() + after;
+            }
+            //find and replace verbs
+            while (template.Contains("Verb") == true)
+            {
+                int firstC = template.IndexOf("Verb");
+                int lastC = template.IndexOf("Verb") + "Verb".Length;
+                int endC = template.Length - (template.IndexOf("Verb") + "Verb".Length);
+                string before = template.Substring(0, firstC);
+                string after = template.Substring(lastC, endC);
+                template = before + GetVerb() + after;
+            }
+            //find and replace adjectives
+            while (template.Contains("Adjective") == true)
+            {
+                int firstC = template.IndexOf("Adjective");
+                int lastC = template.IndexOf("Adjective") + "Adjective".Length;
+                int endC = template.Length - (template.IndexOf("Adjective") + "Adjective".Length);
+                string before = template.Substring(0, firstC);
+                string after = template.Substring(lastC, endC);
+                template = before + GetAdjective() + after;
+            }
+            return template;
         }
     }
 }
