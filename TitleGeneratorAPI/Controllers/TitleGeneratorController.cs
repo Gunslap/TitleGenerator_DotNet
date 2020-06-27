@@ -14,8 +14,12 @@ namespace MissilePuppy.TitleGeneratorAPI.Controllers
     //will have to figure that out later
     public class TitleGeneratorController : ControllerBase
     {
+        //Instance of the TitleGenerator Class
         private static TG.TitleGenerator generator = new TG.TitleGenerator();
+        //Instance of the logging class
         private readonly ILogger<TitleGeneratorController> _logger;
+        //Maximum number of returns we want end users to be able to request
+        private readonly int MaxReturn = 100;
 
         public TitleGeneratorController(ILogger<TitleGeneratorController> logger)
         {
@@ -31,6 +35,8 @@ namespace MissilePuppy.TitleGeneratorAPI.Controllers
         [HttpGet("{id}")] // "/TitleGenerator/3"
         public ActionResult Get(int? id)
         {
+            if (id > MaxReturn) { id = MaxReturn; }
+
             List<string> ls = new List<string>();
             for (int i = 0; i < id; i++)
             {
@@ -48,6 +54,8 @@ namespace MissilePuppy.TitleGeneratorAPI.Controllers
         [HttpGet("title/{id}")] // "/TitleGenerator/title/3"
         public ActionResult GetTitle(int? id)
         {
+            if (id > MaxReturn) { id = MaxReturn; }
+
             List<string> ls = new List<string>();
             for (int i = 0; i < id; i++)
             {
@@ -57,15 +65,17 @@ namespace MissilePuppy.TitleGeneratorAPI.Controllers
         }
 
         //Get a title by input template
-        [HttpGet("ByTemplate/{template}")] // "/TitleGenerator/bytemplate"
+        [HttpGet("ByTemplate/{template}")] // "/TitleGenerator/bytemplate/Adjective Noun Verb"
         public ActionResult GetByTemplate(string template)
         {
             return Ok(generator.GenerateTitleFromTemplate(template));
         }
         //Get multiple titles by input template
-        [HttpGet("ByTemplate/{template}/{id}")] // "/TitleGenerator/bytemplate"
+        [HttpGet("ByTemplate/{template}/{id}")] // "/TitleGenerator/bytemplate/Adjective Noun Verb/3"
         public ActionResult GetByTemplate(string template, int? id)
         {
+            if (id > MaxReturn) { id = MaxReturn; }
+
             List<string> ls = new List<string>();
             for (int i = 0; i < id; i++)
             {
