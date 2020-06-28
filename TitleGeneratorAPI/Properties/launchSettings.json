@@ -20,7 +20,7 @@
     "TitleGeneratorAPI": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "TitleGenerator",
+      "launchUrl": "TitleGenerator/title",
       "applicationUrl": "https://localhost:5001;http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"

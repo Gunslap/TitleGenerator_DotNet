@@ -4,6 +4,18 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>D:\Code\TitleGeneratorSolution\TitleGeneratorAPI\TitleGeneratorAPI.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>D:\Code\TitleGeneratorSolution\TitleGeneratorAPI\TitleGeneratorAPI.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.5.1" />
+  </ItemGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\TitleGenerator\TitleGenerator.csproj" />
   </ItemGroup>
