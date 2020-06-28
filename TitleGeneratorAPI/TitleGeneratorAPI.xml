@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TitleGeneratorAPI</name>
+    </assembly>
+    <members>
+        <member name="T:MissilePuppy.TitleGeneratorAPI.Controllers.TitleGeneratorController">
+            <summary>
+            Title Generator Controller
+            </summary>
+        </member>
+        <member name="M:MissilePuppy.TitleGeneratorAPI.Controllers.TitleGeneratorController.#ctor(Microsoft.Extensions.Logging.ILogger{MissilePuppy.TitleGeneratorAPI.Controllers.TitleGeneratorController})">
+            <summary>
+            creates an instance of the TitleGenerator controller
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="M:MissilePuppy.TitleGeneratorAPI.Controllers.TitleGeneratorController.Get">
+            <summary>
+            Get a randomly generated Strike Force name
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MissilePuppy.TitleGeneratorAPI.Controllers.TitleGeneratorController.Get(System.Nullable{System.Int32})">
+            <summary>
+            Get {num} number of randomly generated Strike Force names
+            </summary>
+            <param name="num" example="5"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MissilePuppy.TitleGeneratorAPI.Controllers.TitleGeneratorController.GetTitle">
+            <summary>
+            Get a random traditional media title
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MissilePuppy.TitleGeneratorAPI.Controllers.TitleGeneratorController.GetTitle(System.Nullable{System.Int32})">
+            <summary>
+            get {num} number of random traditional media titles
+            </summary>
+            <param name="num" example="5"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MissilePuppy.TitleGeneratorAPI.Controllers.TitleGeneratorController.GetByTemplate(System.String)">
+            <summary>
+            Get a title by input template
+            </summary>
+            <param name="template" example="Noun is just a bad version of Adjective Noun"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MissilePuppy.TitleGeneratorAPI.Controllers.TitleGeneratorController.GetByTemplate(System.String,System.Nullable{System.Int32})">
+            <summary>
+            Get {num} number of titles by input template
+            </summary>
+            <param name="template" example="I love Adjective Noun"></param>
+            <param name="num" example="5"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MissilePuppy.TitleGeneratorAPI.Program">
+            <summary>
+            Main Program
+            </summary>
+        </member>
+        <member name="M:MissilePuppy.TitleGeneratorAPI.Program.Main(System.String[])">
+            <summary>
+            Main
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:MissilePuppy.TitleGeneratorAPI.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            IHostBuilder
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MissilePuppy.TitleGeneratorAPI.Startup">
+            <summary>
+            Startup
+            </summary>
+        </member>
+        <member name="M:MissilePuppy.TitleGeneratorAPI.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:MissilePuppy.TitleGeneratorAPI.Startup.Configuration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MissilePuppy.TitleGeneratorAPI.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:MissilePuppy.TitleGeneratorAPI.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+    </members>
+</doc>
