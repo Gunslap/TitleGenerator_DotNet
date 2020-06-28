@@ -5,11 +5,11 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>D:\Code\TitleGeneratorSolution\TitleGeneratorAPI\TitleGeneratorAPI.xml</DocumentationFile>
+    <DocumentationFile>\TitleGeneratorAPI\TitleGeneratorAPI.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>D:\Code\TitleGeneratorSolution\TitleGeneratorAPI\TitleGeneratorAPI.xml</DocumentationFile>
+    <DocumentationFile>\TitleGeneratorAPI\TitleGeneratorAPI.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
