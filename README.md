@@ -58,6 +58,6 @@ returns the string with the words "Noun", "Verb", and "Adjective" replaced with 
 # Future Enhancements / TODO:
 -(Library) make more helper methods to cut down on repeat code between GenerateTitle and GenerateStrikeForce functions
 
--(API) figure out how to allow .XML output as well but keep JSON as the default
+-(Library) Add an adverb list for use in the template
 
--(API) creating some REST API metadata for the project
+-(API) figure out how to allow .XML output as well but keep JSON as the default
