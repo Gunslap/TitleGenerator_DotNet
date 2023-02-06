@@ -33,19 +33,19 @@ namespace MissilePuppy.TitleGeneratorAPI.Controllers
             _logger = logger;
         }
 
-        //Get a Strike Force name
+        //Get a Title
         /// <summary>
-        /// Get a randomly generated Strike Force name
+        /// Get a randomly generated Title
         /// </summary>
         /// <returns></returns>
         [HttpGet] // "/TitleGenerator"
         public ActionResult Get()
         {
-            return Ok(generator.GenerateStrikeForce());
+            return Ok(generator.GenerateTitle());
         }
 
         /// <summary>
-        /// Get {num} number of randomly generated Strike Force names
+        /// Get {num} number of randomly generated Titles
         /// </summary>
         /// <param name="num" example="5"></param>
         /// <returns></returns>
@@ -57,35 +57,35 @@ namespace MissilePuppy.TitleGeneratorAPI.Controllers
             List<string> ls = new List<string>();
             for (int i = 0; i < num; i++)
             {
-                ls.Add(generator.GenerateStrikeForce());
+                ls.Add(generator.GenerateTitle());
             }
             return Ok(ls.ToArray());
         }
 
         /// <summary>
-        /// Get a random traditional media title
+        /// Get a random "Strike Force" Title
         /// </summary>
         /// <returns></returns>
-        [HttpGet("title")] // "/TitleGenerator/title"
-        public ActionResult GetTitle()
+        [HttpGet("strikeforce")] // "/TitleGenerator/strikeforce"
+        public ActionResult GetStrikeForce()
         {
-            return Ok(generator.GenerateTitle());
+            return Ok(generator.GenerateStrikeForce());
         }
 
         /// <summary>
-        /// get {num} number of random traditional media titles
+        /// get {num} number of random "Strike Force" titles
         /// </summary>
         /// <param name="num" example="5"></param>
         /// <returns></returns>
-        [HttpGet("title/{num}")] // "/TitleGenerator/title/3"
-        public ActionResult GetTitle(int? num)
+        [HttpGet("strikeforce/{num}")] // "/TitleGenerator/strikeforce/3"
+        public ActionResult GetStrikeForce(int? num)
         {
             if (num > MaxReturn) { num = MaxReturn; }
 
             List<string> ls = new List<string>();
             for (int i = 0; i < num; i++)
             {
-                ls.Add(generator.GenerateTitle());
+                ls.Add(generator.GenerateStrikeForce());
             }
             return Ok(ls.ToArray());
         }
