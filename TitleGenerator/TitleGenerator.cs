@@ -26,6 +26,12 @@ namespace MissilePuppy.TitleGenerator
             get { return _Verbs; }
             set { _Verbs = value; }
         }
+        private string[] _Adverbs;
+        public string[] Adverbs
+        {
+            get { return _Adverbs; }
+            set { _Adverbs = value; }
+        }
         //Random number generator
         private readonly Random rnd = new Random();
 
@@ -42,6 +48,7 @@ namespace MissilePuppy.TitleGenerator
                 Nouns = System.IO.File.ReadAllLines(@"nouns.txt");
                 Adjectives = System.IO.File.ReadAllLines(@"adjectives.txt");
                 Verbs = System.IO.File.ReadAllLines(@"verbs.txt");
+                Adverbs = System.IO.File.ReadAllLines(@"adverbs.txt");
             }
             //then check the running assembly's directory
             else if(File.Exists(assemblyFolder + @"\nouns.txt"))
@@ -49,6 +56,7 @@ namespace MissilePuppy.TitleGenerator
                 Nouns = System.IO.File.ReadAllLines(assemblyFolder + @"\nouns.txt");
                 Adjectives = System.IO.File.ReadAllLines(assemblyFolder + @"\adjectives.txt");
                 Verbs = System.IO.File.ReadAllLines(assemblyFolder + @"\verbs.txt");
+                Adverbs = System.IO.File.ReadAllLines(assemblyFolder + @"\adverbs.txt");
             }
             else
             {
@@ -81,6 +89,15 @@ namespace MissilePuppy.TitleGenerator
         public string GetVerb()
         {
             return Verbs[rnd.Next(0, Verbs.GetLength(0) - 1)];
+        }
+
+        /// <summary>
+        /// returns a single random adverb
+        /// </summary>
+        /// <returns></returns>
+        public string GetAdverb()
+        {
+            return Adverbs[rnd.Next(0, Adverbs.GetLength(0) - 1)];
         }
 
         /// <summary>
@@ -502,6 +519,16 @@ namespace MissilePuppy.TitleGenerator
                 string before = template.Substring(0, firstC);
                 string after = template.Substring(lastC, endC);
                 template = before + GetAdjective() + after;
+            }
+            //find and replace adverbs
+            while (template.Contains("Adverb") == true)
+            {
+                int firstC = template.IndexOf("Adverb");
+                int lastC = template.IndexOf("Adverb") + "Adverb".Length;
+                int endC = template.Length - (template.IndexOf("Adverb") + "Adverb".Length);
+                string before = template.Substring(0, firstC);
+                string after = template.Substring(lastC, endC);
+                template = before + GetAdverb() + after;
             }
             return template;
         }
