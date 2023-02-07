@@ -45,18 +45,18 @@ The following 6 REST routes are setup by default:
 returns a randomly generated title
 
 ## "/TitleGenerator/{int}"
-returns {int} number of strike forces
+returns {int} number of randomly generated titles
 
-## "/TitleGenerator/strikeforce
+## "/TitleGenerator/strikeforce"
 returns a "Strike Force ___" style title
 
 ## "/TitleGenerator/strikeforce/{int}"
 returns {int} number of "Strike Force ___" style titles
 
-## "/TitleGenerator/ByTemplate/{string}
+## "/TitleGenerator/ByTemplate/{string}"
 returns the string with the words "Noun", "Verb", "Adjective", and "Adverb" replaced with random words of those types
 
-## "/TitleGenerator/ByTemplate/{string}/{int}
+## "/TitleGenerator/ByTemplate/{string}/{int}"
 returns the string with the words "Noun", "Verb", "Adjective", and "Adverb" replaced with random words of those types {int} number of times
 
 # Future Enhancements / TODO:
